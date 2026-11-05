@@ -1,0 +1,6 @@
+{
+  "name": "Lesson2Game – AI Educational Game Factory",
+  "description": "Transform static PDF lesson materials into interactive 2D educational runner games with an agentic AI pipeline and Kaplay.js.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
