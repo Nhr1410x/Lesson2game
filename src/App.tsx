@@ -10,6 +10,8 @@ import { InteractiveBackground } from './components/InteractiveBackground.tsx';
 import { GenerationResponse } from './types/game.ts';
 import { GameResult } from './games/quiz-runner/types.ts';
 
+const API_BASE = import.meta.env.VITE_API_URL || '';
+
 type AppView = 'landing' | 'upload' | 'processing' | 'preview' | 'player' | 'result';
 
 export default function App() {
@@ -49,7 +51,7 @@ export default function App() {
       setProcessingStage(5);
       setStatusMessage('Evaluator thẩm định 100% schema & căn cứ tài liệu...');
 
-      const response = await fetch('/api/v1/games/demo', {
+      const response = await fetch(`${API_BASE}/api/v1/games/demo`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({}),
@@ -96,7 +98,7 @@ export default function App() {
     }, 11000);
 
     try {
-      const response = await fetch('/api/v1/games/generate', {
+      const response = await fetch(`${API_BASE}/api/v1/games/generate`, {
         method: 'POST',
         body: formData,
       });

@@ -3,7 +3,11 @@ build/
 dist/
 coverage/
 .DS_Store
+# Logs & Media
 *.log
+*.mp4
+*.srt
+scripts/
 bun.lock*
 .env*
 !.env.example
